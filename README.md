@@ -12,6 +12,10 @@ nothing that costs money runs without a shown estimate and a human approval.
 Deepgram (transcription) · Higgsfield (image/video generation) · Claude Code / Codex CLI (judgment
 steps) · OpenTimelineIO export to Resolve. Built with Claude Code.
 
+**For agents:** an MCP server exposes the editing core as 13 tools, tested by running a headless
+Claude agent through editing tasks. See [`packages/post_mcp/`](packages/post_mcp/) and the
+write-up of what broke and what changed, [`evals/EVALS.md`](evals/EVALS.md).
+
 - Plan and rationale: `docs/ARCHITECTURE.md` (short).
 - Current priorities and task specs: `docs/TASKS.md` and `tasks/*.md`.
 - How to resume work in a fresh session: `docs/HANDOFF.md`.
@@ -21,6 +25,7 @@ steps) · OpenTimelineIO export to Resolve. Built with Claude Code.
 - `packages/post_core/` -- headless core: data model, atomic JSON store, build graph,
   SQLite queue + executor, edit ops, OTIO export, the `post` CLI.
 - `packages/post_api/` -- thin FastAPI layer over `post_core` (no business logic).
+- `packages/post_mcp/` -- MCP server over `post_core` for LLM agents; evals in `evals/`.
 - `packages/brandkit/` -- brand kit schema, compilers, lint; `kits/_template` and the neutral `kits/_demo`.
 - `web/` -- Vite + React 19 + TypeScript + Tailwind + zustand transcript editor. See
   `web/README.md` for its own npm commands.

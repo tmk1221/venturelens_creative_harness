@@ -12,3 +12,4 @@ node_modules/
 .demo-enrich-e2e/
 web/e2e/.enrich-fixture.json
 .DS_Store
+*.egg-info/

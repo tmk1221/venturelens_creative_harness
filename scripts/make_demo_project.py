@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -27,7 +28,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEMO_DIR = REPO_ROOT / ".demo"
 PROJECT_ROOT = DEMO_DIR / "project"
 MEDIA_DIR = DEMO_DIR / "media"
-POST_BIN = REPO_ROOT / "packages" / "post_core" / ".venv" / "bin" / "post"
+_VENV_POST = REPO_ROOT / "packages" / "post_core" / ".venv" / "bin" / "post"
+# Prefer the repo venv; fall back to POST_BIN or a `post` on PATH (e.g. a single shared venv).
+POST_BIN = Path(os.environ.get("POST_BIN") or (_VENV_POST if _VENV_POST.is_file() else (shutil.which("post") or _VENV_POST)))
 
 # A talking-head-shaped word list (no real transcript, no network) long enough to show off
 # passages, "remove fillers" suggestions, and a plausible "derive short" selection.

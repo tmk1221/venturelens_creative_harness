@@ -1,0 +1,59 @@
+[
+  {
+    "task": "T6",
+    "passed": true,
+    "problems": [],
+    "tool_calls": 4,
+    "calls": [
+      "get_project",
+      "move_passage",
+      "read_cut",
+      "move_passage"
+    ],
+    "errors": [
+      "Error executing tool move_passage: {\"reason\": \"unknown_passage_id\", \"message\": \"Cut has no passage '3fd8b399d5a840eb96ce2d5f78693932'; ids change after every edit.\", \"fix\": \"Call read_cut and use a current passage_id.\"}"
+    ],
+    "seconds": 14,
+    "cost_usd": 0.0358823,
+    "final": "I moved the \"Thanks for joining\" passage to the end of the 'main' cut. The ID you gave (3fd8b399\u2026) was no longer in the cut, so I used the passage that now starts with that text, c061ed64\u2026.",
+    "rep": 0
+  },
+  {
+    "task": "T6",
+    "passed": true,
+    "problems": [],
+    "tool_calls": 4,
+    "calls": [
+      "get_project",
+      "move_passage",
+      "read_cut",
+      "move_passage"
+    ],
+    "errors": [
+      "Error executing tool move_passage: {\"reason\": \"unknown_passage_id\", \"message\": \"Cut has no passage 'f377a760e54246b3a32ac424cf6e6ffb'; ids change after every edit.\", \"fix\": \"Call read_cut and use a current passage_id.\"}"
+    ],
+    "seconds": 14,
+    "cost_usd": 0.035517900000000005,
+    "final": "I moved the \"Thanks for joining\" passage to the end of the 'main' cut. The id you gave (f377a760\u2026) no longer existed, since ids change after edits. I used the current id, 7a075a03\u2026, which has the same text.",
+    "rep": 1
+  },
+  {
+    "task": "T6",
+    "passed": true,
+    "problems": [],
+    "tool_calls": 4,
+    "calls": [
+      "get_project",
+      "move_passage",
+      "read_cut",
+      "move_passage"
+    ],
+    "errors": [
+      "Error executing tool move_passage: {\"reason\": \"unknown_passage_id\", \"message\": \"Cut has no passage 'a9d05c7795dd4ec08cb924f4ae61dfac'; ids change after every edit.\", \"fix\": \"Call read_cut and use a current passage_id.\"}"
+    ],
+    "seconds": 14,
+    "cost_usd": 0.0356179,
+    "final": "I moved the \"Thanks for joining\" passage to the end of the 'main' cut. The ID you gave was stale (the cut had been edited since), so I used its current ID, `cd06c6614e1546cb995e81d5466e5ea3`, which has that same opening text.",
+    "rep": 2
+  }
+]

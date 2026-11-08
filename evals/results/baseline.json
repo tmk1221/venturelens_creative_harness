@@ -1,0 +1,94 @@
+[
+  {
+    "task": "T1",
+    "passed": false,
+    "problems": [
+      "false start left"
+    ],
+    "tool_calls": 4,
+    "calls": [
+      "get_project",
+      "read_transcript",
+      "remove_words",
+      "remove_words"
+    ],
+    "errors": [],
+    "seconds": 13,
+    "cost_usd": 0.0665317,
+    "final": "Cut 'main' now has the \"um\" and the false start \"It was, uh,\" removed, and every other sentence is still in. I read the result back from the edit output, not on playback. The cut now plays \"So, it was a Tuesday. It was a normal Tuesday morning\u2026\", so \"So,\" is still there.",
+    "rescored_problems": []
+  },
+  {
+    "task": "T2",
+    "passed": true,
+    "problems": [],
+    "tool_calls": 3,
+    "calls": [
+      "get_project",
+      "read_transcript",
+      "remove_words"
+    ],
+    "errors": [],
+    "seconds": 10,
+    "cost_usd": 0.058315399999999996,
+    "final": "I cut the Cancun vacation tangent (\"Funny thing, I was actually on vacation in Cancun\u2026 great tacos by the way.\") from the 'main' cut and left everything else in place. The cut is now 46.7 seconds.",
+    "rescored_problems": []
+  },
+  {
+    "task": "T3",
+    "passed": true,
+    "problems": [],
+    "tool_calls": 7,
+    "calls": [
+      "get_project",
+      "read_cut",
+      "read_transcript",
+      "make_short",
+      "remove_words",
+      "remove_words",
+      "remove_words"
+    ],
+    "errors": [],
+    "seconds": 19,
+    "cost_usd": 0.12345149999999999,
+    "final": "I made a 22.9-second 9:16 cut labelled `incident-short`. It runs from the CFO's fake bank email through the attacker never reaching the wire transfer. I cut the host's lines, the intro filler and the Cancun vacation aside, and the `main` cut is unchanged.",
+    "rescored_problems": []
+  },
+  {
+    "task": "T4",
+    "passed": true,
+    "problems": [],
+    "tool_calls": 5,
+    "calls": [
+      "get_project",
+      "read_cut",
+      "read_transcript",
+      "remove_words",
+      "restore_words"
+    ],
+    "errors": [],
+    "seconds": 13,
+    "cost_usd": 0.07050250000000001,
+    "final": "I moved the guest's line \"Honestly, the training did more than any single tool we bought.\" from the end of the 'main' cut to the very start as a hook. The rest of the cut is unchanged.",
+    "rescored_problems": []
+  },
+  {
+    "task": "T5",
+    "passed": false,
+    "problems": [
+      "2 visuals, expected 1"
+    ],
+    "tool_calls": 4,
+    "calls": [
+      "get_project",
+      "suggest_visuals",
+      "accept_visual",
+      "export_timeline"
+    ],
+    "errors": [],
+    "seconds": 11,
+    "cost_usd": 0.0344895,
+    "final": "I got suggestions for the \"main\" cut, accepted only the one over the multi-factor authentication sentence, and exported the timeline to `<run>/baseline/fx_T5/project/exports/main_16x9_v001.otio`. The accepted suggestion added",
+    "rescored_problems": []
+  }
+]
