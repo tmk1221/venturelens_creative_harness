@@ -1,0 +1,315 @@
+/* T13b: self-contained styling for the automated "Suggest visuals" overlay -- deliberately
+   NOT added to `web/src/legacy-look.css` (another agent owns that file's chrome right now),
+   loaded only from `SuggestOverlay.tsx`. */
+
+.suggest-controls {
+  /* T40: lives in the Visuals rail header (`.visual-rail-suggest`), in normal flow -- it used
+     to float over the transcript and covered the "Read the story…" hint. */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.visual-rail-suggest {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line, color-mix(in srgb, currentColor 15%, transparent));
+}
+
+.suggest-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.suggest-spinner {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-top-color: currentColor;
+  animation: suggest-spin 0.8s linear infinite;
+  vertical-align: -1px;
+}
+
+@keyframes suggest-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .suggest-spinner { animation-duration: 2.4s; }
+}
+
+.suggest-note {
+  font-size: 12px;
+  color: var(--muted, inherit);
+}
+
+.suggest-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted, inherit);
+  cursor: default;
+}
+
+.suggest-rail-error {
+  margin: 0 0 12px;
+  max-width: none;
+}
+
+/* The number shared by a proposed card and its dashed passage. */
+.suggest-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #b8860b;
+  color: #1b1b1b;
+  font: 600 10.5px/1 var(--mono, ui-monospace, monospace);
+}
+
+/* T41: positioned (fixed) by `placeBadges`, clear of every other badge; the only part of a
+   passage that takes the pointer. */
+.suggest-passage-badge {
+  position: fixed;
+  z-index: 22;
+  border: 1px solid color-mix(in srgb, #1b1b1b 35%, transparent);
+  cursor: pointer;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+.suggest-decoration.is-active .suggest-passage-badge {
+  background: #e0a91f;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #b8860b 55%, transparent);
+}
+
+.proposed-heading {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.proposed-chip {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid #655d40;
+  font-size: 10.5px;
+  color: #d8c58e;
+}
+
+.proposed-field {
+  display: block;
+  margin: 0 0 8px;
+}
+
+.proposed-field > span {
+  display: block;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted, inherit);
+  margin-bottom: 3px;
+}
+
+.proposed-field textarea,
+.proposed-field select {
+  width: 100%;
+  font: inherit;
+  font-size: 12px;
+  padding: 5px 7px;
+  border-radius: 6px;
+  border: 1px solid #514c35;
+  background: color-mix(in srgb, #000 20%, transparent);
+  color: var(--ink, inherit);
+  resize: vertical;
+}
+
+.proposed-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 8px;
+}
+
+.proposed-rationale {
+  font-size: 12px;
+  margin: 0 0 10px;
+  color: var(--muted, inherit);
+}
+
+.proposed-rationale summary {
+  cursor: pointer;
+}
+
+.proposed-rationale p {
+  margin: 4px 0 0;
+}
+
+.visual-card-brief {
+  margin: 0 0 8px;
+}
+
+.suggest-trigger {
+  font: inherit;
+  font-size: 12.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  background: color-mix(in srgb, #b8860b 12%, transparent);
+  color: inherit;
+  cursor: pointer;
+}
+
+.suggest-trigger:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.suggest-error {
+  font-size: 12px;
+  max-width: 36ch;
+  color: #b42318;
+}
+
+.suggest-accept-all {
+  font: inherit;
+  font-size: 12.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* T41: a passage is drawn line by line -- a faint fill per line plus an underline in its own
+   lane (offset by `data-lane`), dashed for picture, dotted for overlay. Pointer events pass
+   through to the words; only the badge is interactive. */
+.suggest-decoration {
+  pointer-events: none;
+}
+
+.suggest-segment {
+  position: fixed;
+  z-index: 20;
+  pointer-events: none;
+  background: color-mix(in srgb, #b8860b 7%, transparent);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.suggest-underline {
+  position: fixed;
+  z-index: 21;
+  height: 0;
+  pointer-events: none;
+  border-bottom: 2px dashed #b8860b;
+}
+
+.suggest-decoration.is-overlay .suggest-underline {
+  border-bottom: 2px dotted #6ea8d8;
+}
+
+.suggest-decoration.is-active .suggest-segment {
+  background: color-mix(in srgb, #b8860b 28%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, #b8860b 55%, transparent);
+  border-radius: 3px;
+}
+
+.suggest-decoration.is-active .suggest-underline {
+  border-bottom-style: solid;
+}
+
+.suggest-hover-card {
+  position: fixed;
+  z-index: 40;
+  min-width: 220px;
+  max-width: 320px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  background: canvas;
+  color: canvastext;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.suggest-hover-card .suggest-kind {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: #b8860b;
+  margin: 0 0 4px;
+}
+
+.suggest-hover-card .suggest-brief {
+  margin: 0 0 4px;
+}
+
+.suggest-hover-card .suggest-rationale {
+  margin: 0 0 8px;
+  opacity: 0.75;
+}
+
+.suggest-hover-card .suggest-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.suggest-hover-card button {
+  font: inherit;
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.suggest-hover-card button.primary {
+  background: color-mix(in srgb, #b8860b 20%, transparent);
+}
+
+/* T42: a saved (accepted) beat keeps its number -- solid, on the card and on its words. */
+.suggest-badge.is-saved {
+  background: #3d6b4f;
+  color: #f4f1ea;
+}
+
+.saved-card-badge {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* T42: "Variant A / Variant B" on a proposed card with more than one idea for its words. */
+.proposed-variants {
+  display: inline-flex;
+  gap: 4px;
+  margin: 2px 0 6px;
+}
+
+.proposed-variants button {
+  border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-radius: 999px;
+  background: transparent;
+  padding: 1px 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.proposed-variants button[aria-pressed='true'] {
+  background: #b8860b;
+  border-color: #b8860b;
+  color: #1b1b1b;
+}

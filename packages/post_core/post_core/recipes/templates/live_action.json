@@ -1,0 +1,6 @@
+{
+  "recipe_id": "live_action",
+  "description": "Stills (n variants) -> human pick -> motion prompt -> video -> verify -> approve.",
+  "exposed": ["shot_type", "subject", "action", "setting", "subject_motion", "static", "camera", "pacing", "variants"],
+  "human_gates": ["pick", "approve"]
+}

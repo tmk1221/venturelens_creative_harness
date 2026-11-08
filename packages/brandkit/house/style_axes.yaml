@@ -1,0 +1,74 @@
+# style_axes.yaml — the axes derive.py asks a vision model to describe when building a
+# still-style block from a folder of reference images. Each axis names the dimensions it
+# covers (for the human reading this file), a one-line plain-English explanation, and
+# 3-5 example phrasings of what a filled-in answer looks like. None of these are brand
+# words — they're the shared vocabulary derive-style prompts against, on top of which
+# `derive.py` also strips subjects/settings/text/logos per T17 decision 2.
+version: "1"
+
+axes:
+  colour:
+    dimensions: [hues, scheme, saturation, temperature, shadow_highlight_tint, black_level]
+    explanation: "The colour language the images share, in general photographic terms — not the brand's actual colours."
+    examples:
+      - "warm neutral hues, muted saturation, lifted black level"
+      - "cool desaturated palette, monochrome-leaning scheme"
+      - "high-saturation complementary scheme, deep crushed blacks"
+      - "earthy analogous hues, warm shadow tint"
+      - "cold, clinical palette with a slight teal shadow cast"
+
+  light:
+    dimensions: [quality, direction, contrast, motivation, atmosphere]
+    explanation: "How the images are lit — quality, direction and mood of the light, not what's lit."
+    examples:
+      - "soft diffuse light, low contrast, motivated by a large window"
+      - "hard directional light, high contrast, single visible source"
+      - "flat even light, no visible shadow, studio-motivated"
+      - "practical-motivated light with visible atmosphere or haze"
+      - "backlit, silhouette-leaning contrast"
+
+  lens:
+    dimensions: [focal_length, depth_of_field, height_distance, anamorphic_traits]
+    explanation: "The optical character shared by the images — how they were 'shot', independent of subject."
+    examples:
+      - "long lens, shallow depth of field, distant camera"
+      - "wide angle, deep focus, close camera height"
+      - "normal focal length, moderate depth of field, eye-level"
+      - "anamorphic-style oval bokeh and horizontal flares"
+      - "macro-close framing with a razor-thin focal plane"
+
+  composition:
+    explanation: "How subjects and space are arranged in the frame, independent of what's in it."
+    examples:
+      - "subject small in frame, generous negative space"
+      - "tight, centred, symmetrical framing"
+      - "off-centre subject on a rule-of-thirds axis"
+      - "layered foreground, midground and background depth"
+      - "high, overhead vantage looking down"
+
+  texture_medium:
+    explanation: "The surface quality of the image itself — grain, sharpness, digital vs. analog feel."
+    examples:
+      - "clean digital capture, no visible grain"
+      - "fine film grain, soft highlight rolloff"
+      - "crisp, high-clarity, slightly sharpened look"
+      - "slight halation and bloom on highlights"
+      - "textured, matte finish, muted micro-contrast"
+
+  production_design:
+    explanation: "The built environment and object language shared across the images — materials, era, clutter level."
+    examples:
+      - "minimal, uncluttered interiors, natural materials"
+      - "dense, layered environments with visible tools or equipment"
+      - "modern, glass-and-steel architectural settings"
+      - "worn, lived-in spaces with visible use and age"
+      - "neutral, unbranded generic settings"
+
+  people:
+    explanation: "How people are directed and presented, if present at all — posture and energy, not who they are."
+    examples:
+      - "relaxed, unposed, caught mid-action"
+      - "still, composed, direct engagement with the camera"
+      - "candid, in-motion, slightly off-balance framing"
+      - "formal, deliberate posture and gesture"
+      - "people absent or peripheral, environment-led"

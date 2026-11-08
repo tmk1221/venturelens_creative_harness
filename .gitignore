@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.demo/
+.demo-acme/
+.demo-acme.start
+.post_api_registry.json
+.gstack/
+.demo-script/
+.demo-enrich-e2e/
+web/e2e/.enrich-fixture.json
+.DS_Store

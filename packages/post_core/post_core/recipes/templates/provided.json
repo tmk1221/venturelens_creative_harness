@@ -1,0 +1,6 @@
+{
+  "recipe_id": "provided",
+  "description": "Already-ingested footage, registered as a workflow asset without touching the file, then approved.",
+  "exposed": ["path", "in_seconds", "out_seconds"],
+  "human_gates": ["approve"]
+}

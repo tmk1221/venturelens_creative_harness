@@ -1,0 +1,49 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-13T00:00:00Z"
+  },
+  "title": "Kestrel Demo Co. Brand System",
+  "namespace": "KestrelDemo",
+  "libraries": [],
+  "sections": {},
+  "groups": [
+    "Logos",
+    "Motion"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "mark.svg",
+        "lockup.svg"
+      ],
+      "files": {
+        "mark.svg": {
+          "name": "mark.svg",
+          "type": "image/svg+xml"
+        },
+        "lockup.svg": {
+          "name": "lockup.svg",
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Motion": {
+      "name": "Motion",
+      "tile": "m",
+      "order": [],
+      "files": {}
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": [
+      "project/motion.md"
+    ]
+  }
+}

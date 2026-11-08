@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brandkit"
+version = "0.1.0"
+description = "Versioned per-client brand kits, compiled into what each HyperFrames tool expects, with lint that can fail."
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml>=6.0",
+    "ruamel.yaml>=0.18",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["brandkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

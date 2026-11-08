@@ -1,0 +1,39 @@
+{
+  "_": "What a design system cannot say about itself and the kit must know. Token names refer to tokens.json. `guessed` is true while values are first guesses from a site.",
+  "artifact": null,
+  "guessed": false,
+  "identity": {
+    "name": "[Client]",
+    "what_they_do": null,
+    "who_they_serve": null
+  },
+  "colours": {
+    "primary": {
+      "token": "primary",
+      "name_plain": "brand colour"
+    },
+    "secondary": {
+      "token": "secondary",
+      "name_plain": "second brand colour"
+    },
+    "accent": {
+      "token": "accent",
+      "name_plain": "accent colour"
+    },
+    "dark_neutral": {
+      "token": "ink",
+      "name_plain": "near-black"
+    },
+    "light_neutral": {
+      "token": "surface",
+      "name_plain": "white"
+    }
+  },
+  "world_tone": "light",
+  "dominant": "light_neutral",
+  "personality": {
+    "is": [],
+    "voice": null
+  },
+  "logos": {}
+}

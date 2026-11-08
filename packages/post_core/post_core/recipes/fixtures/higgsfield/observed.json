@@ -1,0 +1,20 @@
+{
+  "_note": "T18 item 1, recorded 2026-10-13 from higgsfield CLI 1.1.25 (free, read-only calls only). aspect_ratios = the aspect_ratio enum of `higgsfield model get <id> --json` (same lists as models/*.json). credits = `higgsfield generate cost <id> ... --json` -> {\"credits\": N}. max_duration_seconds = the CLI's own validation error ('duration: Input should be less than or equal to 15'). fps is NOT exposed by `model get`; kling3_0's 24 is ffprobe of one earlier completed pro 16:9 job (1928x1076, r_frame_rate 24/1), not a contract. A model missing from this file is treated as offering every aspect.",
+  "nano_banana_2": {
+    "job_type": "nano_banana_pro",
+    "aspect_ratios": ["1:1", "3:2", "2:3", "4:3", "3:4", "4:5", "5:4", "9:16", "16:9", "21:9"],
+    "credits": {"per_call": {"1k": 2, "2k": 2, "4k": 4}}
+  },
+  "seedream_v4_5": {
+    "job_type": "seedream_v4_5",
+    "aspect_ratios": ["1:1", "4:3", "16:9", "3:2", "21:9", "3:4", "9:16", "2:3"],
+    "credits": {"per_call": {"basic": 1, "high": 1}}
+  },
+  "kling3_0": {
+    "job_type": "kling3_0",
+    "aspect_ratios": ["16:9", "9:16", "1:1"],
+    "fps": 24,
+    "max_duration_seconds": 15,
+    "credits": {"per_second": {"std": {"on": 1.75, "off": 1.25}, "pro": {"on": 2, "off": 1.5}, "4k": {"on": 6}}}
+  }
+}

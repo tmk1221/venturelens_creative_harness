@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: post_api
+Version: 0.1.0
+Summary: Post v3 HTTP API: thin FastAPI layer over post_core. No business logic here.
+Requires-Python: >=3.12
+Requires-Dist: fastapi>=0.110
+Requires-Dist: uvicorn>=0.29
+Requires-Dist: pydantic>=2.6
+Requires-Dist: post_core
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: httpx>=0.27; extra == "dev"

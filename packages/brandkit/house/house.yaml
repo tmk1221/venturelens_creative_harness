@@ -1,0 +1,106 @@
+# house.yaml — Travis's universal craft rules, shipped with the package. Every kit under
+# kits/<client>/ merges on top of this file; nothing here is brand-specific. Each section
+# carries a `source:` note (which part of docs/research-brand-consistent-generation.md, or
+# a backlog/audit lesson, produced this default) so Travis can see why a rule exists before
+# changing it. A section is only overridable by a kit's `house_overrides:` block when it
+# says `overridable: true` — see brandkit/merge.py.
+version: "1"
+
+still_prompt:
+  source: "research §6(c) — still-prompt template"
+  overridable: false
+  structure: >
+    [SHOT TYPE] of [SUBJECT] [ACTION] in [SETTING]. Shot on [lens_and_camera]. [lighting].
+    [time_of_day]. [film_stock_or_grade]. Mood: [mood].
+    [Optional: brand colour on a named wardrobe/prop item]
+    Negative: [negatives, capped]. Style reference image attached: [hero_frame].
+    [If recurring subject: character/location reference image attached]
+  exclusions:
+    - "hex colour codes"
+    - "font family names"
+    - "the brand name or wordmark as literal text"
+    - "any instruction to generate a logo"
+    - "any instruction to generate a screen or UI surface with content"
+    - "quoted on-screen text"
+    - "the phrase 'brand guidelines'"
+
+motion_prompt:
+  source: "research §3 (Kling 3.0 / Veo 3.1 5-part structure) + §6(c)"
+  overridable: false
+  structure: >
+    Camera: [single move]. Subject motion: [one action only]. Static: [named elements that
+    must not move]. Pacing: [subtle / moderate / dramatic, or numeric intensity].
+    Negative: [negatives, capped].
+  rule_single_action: "describe only the delta from the start frame; never restate style, lighting or palette — the start frame is the style anchor"
+  # Last resort for a slot nobody filled: the beat sets camera/pacing first, then the look,
+  # then the kit (video.camera_personality / pacing_default). Since 31f5cdd a Brand System
+  # kit leaves both pending (the beat decides), so without these a video beat could never
+  # build its motion prompt. Neutral on purpose: a held frame never fights the start frame.
+  defaults:
+    camera: "locked-off, steady frame"
+    pacing: "subtle"
+
+negatives:
+  source: "research §1, §3 (Cliprise negative-prompt guide) — short beats long"
+  overridable: false
+  stills_max_terms: 8
+  video_max_terms: 6
+
+never_generate:
+  source: "research §2 — logos/screens/UI are composited, never generated"
+  overridable: false
+  note: >
+    A model-limitation DEFAULT (today's image/video models can't render these
+    reliably), not a brand rule — every still_prompt() call appends these as forced
+    negatives unless the caller's own slots["allow"] lifts the matching one
+    ("text"/"logo"/"screen") for that one beat. See compile.NEVER_GENERATE_ALLOW_MAP.
+  items:
+    - "a screen or UI surface with legible content"
+    - "a logo"
+    - "legible on-screen text of any kind"
+
+references_not_chaining:
+  source: "research §1 (ModernPhotoTools, GensGPT) — chaining causes identity drift"
+  overridable: false
+  rule: "always re-attach the canonical reference sheet to every new generation; never feed generation N's output as N+1's reference"
+
+safe_areas:
+  source: "research §5 (Henkel Brand Hub, HBO Max, broadcast convention) — action-safe ~90%, title-safe ~80%"
+  overridable: false
+  "16:9": { title_safe: 0.80, action_safe: 0.90 }
+  "9:16": { title_safe: 0.80, action_safe: 0.90 }
+
+motion_design:
+  source: "research §5 (Carbon Design System, Material 3, Shopify Polaris); numeric defaults carried forward from the T01 Acme kit as the first observed house-craft pattern"
+  overridable: true
+  duration_scale_note: "non-linear — larger changes take longer; never one flat duration for every move"
+  easing_note: "asymmetric — decelerate on entrance, accelerate on exit"
+  ease: "power2.out"
+  durations: { micro: 0.15, standard: 0.35, slow: 0.70, hold: 1.00 }
+  forbidden: ["spin", "rotation", "wipe", "bounce"]
+  max_simultaneous_moves: 2
+
+color_ratio:
+  source: "research §5 (Wix — 60/30/10 rule)"
+  overridable: true
+  default: "60/30/10"
+
+clip_length:
+  source: "research §3 — Kling/Veo duration guidance"
+  overridable: false
+  rule: "clip length >= beat length + 1s handle"
+
+qa_checklist:
+  source: "research §6(d) — 10-item QA checklist"
+  overridable: false
+  items:
+    - "No stray legible text anywhere in the frame (eye scan or OCR pass)."
+    - "No generated logo or screen content — any screen/UI surface is blank/dark or composited in post."
+    - "Hero-frame family resemblance — lens character, lighting, grade match the approved reference set."
+    - "Brand colour present only as accent, never a dominant wash or claimed hex match."
+    - "No hand/limb distortion on any human subject."
+    - "Motion matches the single stated action — no drift, no identity/face drift from the start frame."
+    - "Safe areas respected in any overlay — nothing critical outside the title-safe box."
+    - "Colour ratio sanity check on composited graphics — brand hue reads as accent, not wallpaper."
+    - "Captions/lower-thirds use the kit's type family and caption style, not a system default."
+    - "Character/location consistency across a sequence — regenerated from the canonical reference sheet each time, not chained."

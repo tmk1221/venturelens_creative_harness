@@ -1,0 +1,22 @@
+<!-- @dsCard height=288 -->
+<style>
+body{margin:0;background:var(--surface);font-family:var(--font-sans);width:960px;height:288px;position:relative;overflow:hidden}
+.name{position:absolute;left:48px;bottom:44px;max-width:440px}
+.name h1{margin:0;font-size:96px;line-height:.92;font-weight:700;letter-spacing:-0.02em;color:var(--ink)}
+.name p{margin:8px 0 0;font-size:14px;color:var(--muted);font-weight:400}
+svg{position:absolute;left:480px;top:0}
+.p{fill:var(--primary)}.s{fill:var(--secondary)}.a{fill:var(--accent)}.g{fill:var(--ground-light)}
+</style>
+<!--
+blocks: primary slab 240x288 bleeding off the right edge; a ground-light field 240x288 beside it; together half the cover
+arrangement: a flush pair of equal slabs, light then dark. Replace the discs with the brand's own motif once the mark exists.
+pattern: placeholder discs from radius-pill at a 64px pitch (space-7); one accent disc
+scales: space-6 inset, space-7 pitch, radius-pill
+-->
+<svg width="480" height="288" viewBox="0 0 480 288">
+<rect class="g" x="0" y="0" width="240" height="288"/><rect class="p" x="240" y="0" width="240" height="288"/>
+<circle class="s" cx="76" cy="76" r="28"/><circle class="s" cx="140" cy="76" r="28"/><circle class="a" cx="204" cy="76" r="28"/>
+<circle class="g" cx="316" cy="76" r="28"/><circle class="g" cx="380" cy="76" r="28"/>
+</svg>
+<div class="name"><h1>[Client]</h1><p>[One line on what the brand system holds.]</p></div>
+<script>document.documentElement.dataset.ready="1"</script>

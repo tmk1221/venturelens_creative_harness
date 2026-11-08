@@ -1,0 +1,6 @@
+{
+  "recipe_id": "motion_graphic",
+  "description": "Brief -> HyperFrames design (brand-lint gated) -> draft render -> approve -> final render -> verify -> approve.",
+  "exposed": ["instruction"],
+  "human_gates": ["approve_draft", "approve_final"]
+}

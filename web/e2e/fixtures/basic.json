@@ -1,0 +1,247 @@
+{
+  "pid": "c77f6e6be5b74407853e1cfbc193fd32",
+  "source_id": "940408f43c7542f792fff12354fe6cc8",
+  "sync_group_id": "abfabea6635744ce81a469d1ad1f35aa",
+  "transcript_id": "a0fd4d7d2303478a9b64d19fa9416b34",
+  "cut_id": "c8e6a4085d3346db818f29f39724ae81",
+  "projects": {
+    "projects": [
+      {
+        "id": "c77f6e6be5b74407853e1cfbc193fd32",
+        "root": "/private/var/folders/yp/199phygd7c5fj5fmp6jpxnm00000gp/T/tmp4bq01ttp/proj-11",
+        "name": "Demo"
+      }
+    ]
+  },
+  "shoots": [
+    {
+      "id": "0df9307273c345629cd38ef550a68ac6",
+      "schema_version": 1,
+      "name": "default",
+      "sources": [
+        {
+          "id": "940408f43c7542f792fff12354fe6cc8",
+          "schema_version": 1,
+          "path": "/private/var/folders/yp/199phygd7c5fj5fmp6jpxnm00000gp/T/tmp4bq01ttp/clip.mp4",
+          "fps": {
+            "num": 25,
+            "den": 1
+          },
+          "start_timecode": "00:00:00:00",
+          "role": "a_roll",
+          "proxy_path": null,
+          "peaks_path": null,
+          "audio_proxy_path": null,
+          "content_fingerprint": "fbe44f76ef4d10447aa79bdb1b8cb91ad2b3d1df4b3a1142253cab8c81219961"
+        }
+      ],
+      "sync_groups": [
+        {
+          "id": "abfabea6635744ce81a469d1ad1f35aa",
+          "schema_version": 1,
+          "source_ids": [
+            "940408f43c7542f792fff12354fe6cc8"
+          ],
+          "offsets": {
+            "940408f43c7542f792fff12354fe6cc8": 0.0
+          }
+        }
+      ],
+      "transcript_ids": [
+        "a0fd4d7d2303478a9b64d19fa9416b34"
+      ]
+    }
+  ],
+  "cutList": [
+    {
+      "id": "c8e6a4085d3346db818f29f39724ae81",
+      "aspect": {
+        "num": 16,
+        "den": 9
+      },
+      "variant_label": "",
+      "parent_cut_id": null,
+      "passage_count": 1
+    }
+  ],
+  "cut": {
+    "revision": 1,
+    "cut": {
+      "id": "c8e6a4085d3346db818f29f39724ae81",
+      "schema_version": 1,
+      "aspect": {
+        "num": 16,
+        "den": 9
+      },
+      "fps": {
+        "num": 24000,
+        "den": 1001
+      },
+      "parent_cut_id": null,
+      "variant_label": "",
+      "sections": [],
+      "passages": [
+        {
+          "id": "1ad2b2298a55451ebe7d6bc7cc312871",
+          "schema_version": 1,
+          "sync_group_id": "abfabea6635744ce81a469d1ad1f35aa",
+          "start_word_id": "3e982b302fc1409fa9316ff535d137a9",
+          "end_word_id": "9fdab56bc3904425a2695b21d0eecfb3",
+          "trims": {
+            "head": 0.0,
+            "tail": 0.0
+          },
+          "angle_source_id": "940408f43c7542f792fff12354fe6cc8",
+          "framing": null
+        }
+      ],
+      "spans": []
+    }
+  },
+  "timeline": [
+    {
+      "passage_id": "1ad2b2298a55451ebe7d6bc7cc312871",
+      "sync_group_id": "abfabea6635744ce81a469d1ad1f35aa",
+      "angle_source_id": "940408f43c7542f792fff12354fe6cc8",
+      "audio_source_id": "940408f43c7542f792fff12354fe6cc8",
+      "source_start": 0.0,
+      "source_end": 3.25,
+      "start_frame": 0,
+      "duration_frames": 78
+    }
+  ],
+  "transcript": {
+    "revision": 1,
+    "transcript": {
+      "id": "a0fd4d7d2303478a9b64d19fa9416b34",
+      "schema_version": 1,
+      "sync_group_id": "abfabea6635744ce81a469d1ad1f35aa",
+      "provider": "import:json",
+      "fingerprint": "import:t-11.json"
+    },
+    "word_count": 11
+  },
+  "words": {
+    "transcript_id": "a0fd4d7d2303478a9b64d19fa9416b34",
+    "total": 11,
+    "offset": 0,
+    "limit": 500,
+    "words": [
+      {
+        "id": "3e982b302fc1409fa9316ff535d137a9",
+        "schema_version": 1,
+        "text": "So",
+        "start": 0.0,
+        "end": 0.25,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "74997cf9587141c49e0e7a77783a4a85",
+        "schema_version": 1,
+        "text": "um",
+        "start": 0.3,
+        "end": 0.55,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "42df6559df3e46578b5aadacd70a0cc8",
+        "schema_version": 1,
+        "text": "today",
+        "start": 0.6,
+        "end": 0.85,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "b0a67568001846c9a48313fa358d8756",
+        "schema_version": 1,
+        "text": "we're",
+        "start": 0.8999999999999999,
+        "end": 1.15,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "79a39366996143d0844e8a8089fe72a4",
+        "schema_version": 1,
+        "text": "going",
+        "start": 1.2,
+        "end": 1.45,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "352b2a33928b41e7baaf56849fbcc7d8",
+        "schema_version": 1,
+        "text": "to",
+        "start": 1.5,
+        "end": 1.75,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "b56e8e7d9cc043b6b7a9b4e2b2007d8f",
+        "schema_version": 1,
+        "text": "talk",
+        "start": 1.7999999999999998,
+        "end": 2.05,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "03653f66793145d0ad9ec4aeb01bca1b",
+        "schema_version": 1,
+        "text": "about",
+        "start": 2.1,
+        "end": 2.35,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "63040282be154a25bc9434c17677e2af",
+        "schema_version": 1,
+        "text": "the",
+        "start": 2.4,
+        "end": 2.65,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "d342ff5abc324645b73d7708850f17c4",
+        "schema_version": 1,
+        "text": "launch",
+        "start": 2.6999999999999997,
+        "end": 2.9499999999999997,
+        "speaker": "",
+        "confidence": 1.0
+      },
+      {
+        "id": "9fdab56bc3904425a2695b21d0eecfb3",
+        "schema_version": 1,
+        "text": "basically",
+        "start": 3.0,
+        "end": 3.25,
+        "speaker": "",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "suggestions": [
+    {
+      "sync_group_id": "abfabea6635744ce81a469d1ad1f35aa",
+      "start_word_id": "74997cf9587141c49e0e7a77783a4a85",
+      "end_word_id": "74997cf9587141c49e0e7a77783a4a85",
+      "kind": "filler",
+      "reason": "filler word 'um'"
+    },
+    {
+      "sync_group_id": "abfabea6635744ce81a469d1ad1f35aa",
+      "start_word_id": "9fdab56bc3904425a2695b21d0eecfb3",
+      "end_word_id": "9fdab56bc3904425a2695b21d0eecfb3",
+      "kind": "filler",
+      "reason": "filler word 'basically'"
+    }
+  ]
+}

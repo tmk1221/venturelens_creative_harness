@@ -1,0 +1,47 @@
+{
+  "_": "What a design system cannot say about itself and the kit must know. Token names refer to tokens.json. `guessed` is true while values are first guesses from a site.",
+  "artifact": null,
+  "guessed": false,
+  "identity": {
+    "name": "Kestrel Demo Co.",
+    "what_they_do": "Bookkeeping and payroll for small independent shops (a made-up company for Post3's demo and tests)",
+    "who_they_serve": "Independent caf\u00e9s, studios and repair shops that want their books handled by people, not a portal"
+  },
+  "colours": {
+    "primary": {
+      "token": "primary",
+      "name_plain": "deep forest green"
+    },
+    "secondary": {
+      "token": "secondary",
+      "name_plain": "soft sage green"
+    },
+    "accent": {
+      "token": "accent",
+      "name_plain": "warm amber"
+    },
+    "dark_neutral": {
+      "token": "ink",
+      "name_plain": "near-black green"
+    },
+    "light_neutral": {
+      "token": "surface",
+      "name_plain": "white"
+    }
+  },
+  "world_tone": "light",
+  "dominant": "light_neutral",
+  "personality": {
+    "is": [
+      "warm",
+      "practical",
+      "steady",
+      "plain-spoken"
+    ],
+    "voice": "A neighbour who happens to be good with numbers: friendly, plain, never in a hurry, and always clear about what happens next."
+  },
+  "logos": {
+    "lockup": "assets/Logos/lockup.svg",
+    "mark": "assets/Logos/mark.svg"
+  }
+}

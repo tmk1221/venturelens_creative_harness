@@ -1,0 +1,6 @@
+{
+  "recipe_id": "overlay",
+  "description": "Provided/generated overlay candidate -> measure -> cutout -> verify -> approve.",
+  "exposed": ["path"],
+  "human_gates": ["approve"]
+}

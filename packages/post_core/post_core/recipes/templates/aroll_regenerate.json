@@ -1,0 +1,6 @@
+{
+  "recipe_id": "aroll_regenerate",
+  "description": "A-roll regen stub (T15 owns the real providers) -- request -> consent gate.",
+  "exposed": ["mode", "instruction"],
+  "human_gates": ["consent"]
+}
